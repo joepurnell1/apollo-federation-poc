@@ -1,0 +1,22 @@
+{
+  "name": "federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compose:super-schema": "rover supergraph compose --config ./gateway/supergraph-config.yaml > ./gateway/supergraph.graphql",
+    "start:gateway": "node ./gateway/index.js -p 4000",
+    "start:movies": "node ./movies-server/index.js",
+    "start:actors": "node ./actors-server/index.js",
+    "start:reviews": "node ./reviews-server/index.js"
+  },
+  "dependencies": {
+    "@apollo/federation": "^0.32.0",
+    "@apollo/gateway": "^0.41.0",
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.5.3"
+  },
+  "devDependencies": {
+    "@apollo/rover": "^0.2.0"
+  }
+}
